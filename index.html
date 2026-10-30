@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adrián Acevedo · Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Adrián Acevedo Reinoso, desarrollador web junior con formación en frontend y backend."
+    />
+    <meta name="author" content="Adrián Acevedo Reinoso" />
+
+    <!-- Tema claro/oscuro. Va en el <head> y sin defer a propósito: así el
+         tema se aplica antes del primer pintado y no hay parpadeo. -->
+    <script src="/js/theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- ============ NAVEGACIÓN ============ -->
+    <header class="nav-wrap">
+      <nav class="nav" aria-label="Principal">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educación</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+
+        <!-- Selector de tema: Claro / Oscuro / Sistema -->
+        <div class="theme">
+          <button
+            class="theme-btn"
+            id="theme-toggle"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-label="Elige el tema"
+            title="Elige el tema"
+          >
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <ul class="theme-menu" id="theme-menu" role="menu" hidden>
+            <li>
+              <button role="menuitemradio" data-theme-option="light">
+                Claro
+              </button>
+            </li>
+            <li>
+              <button role="menuitemradio" data-theme-option="dark">
+                Oscuro
+              </button>
+            </li>
+            <li>
+              <button role="menuitemradio" data-theme-option="system">
+                Sistema
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- ============ HERO ============ -->
+      <section class="hero reveal" id="inicio">
+        <div class="avatar">
+          <span class="avatar-fallback" aria-hidden="true">AA</span>
+          <!-- TODO: guarda tu foto en img/foto.jpg (cuadrada, mínimo 300x300) -->
+          <img
+            src="img/foto.jpg"
+            alt="Foto de Adrián Acevedo Reinoso"
+            width="120"
+            height="120"
+            onerror="this.remove()"
+          />
+        </div>
+
+        <a class="badge" href="#contacto">
+          <span class="dot"></span> Disponible para prácticas
+        </a>
+
+        <h1>Hola, soy Adrián</h1>
+        <p class="lead">
+          <strong>Desarrollador web junior</strong> de Sevilla, España 🇪🇸.
+          Formación en tecnologías frontend y backend, con ganas de seguir
+          aprendiendo y crecer dentro de un equipo de desarrollo.
+        </p>
+
+        <div class="hero-links">
+          <span class="hero-label">Contáctame</span>
+          <!-- TODO: cambia TU_USUARIO por tu usuario real -->
+          <a
+            class="chip-link"
+            href="https://github.com/GOLDxurk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+            GitHub
+          </a>
+          <!-- TODO: cambia TU_PERFIL por tu perfil real de LinkedIn -->
+          <a
+            class="chip-link"
+            href="https://www.linkedin.com/in/adrián-acevedo-reinoso-3151953a3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+          <a class="chip-link" href="mailto:adrianaceved@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-10 6L2 7" />
+            </svg>
+            Email
+          </a>
+        </div>
+
+        <!-- TODO: pon aquí la ruta real de tu CV en PDF (también más abajo, en Contacto) -->
+        <a
+          class="btn btn-primary"
+          href="cv/CV Europass Adrián Acevedo Reinoso.pdf"
+          download="CV Europass Adrián Acevedo Reinoso.pdf"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          Descargar CV
+        </a>
+      </section>
+
+      <!-- ============ EXPERIENCIA ============ -->
+      <section id="experiencia" class="section reveal">
+        <h2>Experiencia laboral</h2>
+
+        <ol class="timeline">
+          <li>
+            <h3>Desarrollador Web <span class="muted">(Prácticas en Dual)</span></h3>
+            <h4>NTT DATA · Sevilla</h4>
+            <p class="date">Abril 2026 - Mayo 2026</p>
+            <ul class="bullets">
+              <li>Desarrollo de aplicaciones web con manejo de bases de datos.</li>
+              <li>Diseño de bases de datos.</li>
+              <li>Testing de aplicaciones.</li>
+              <li>Cursos de formación sobre el desarrollo web.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Técnico Informático <span class="muted">(FCT)</span></h3>
+            <h4>I.E.S Juan de Mairena · Mairena del Aljarafe, Sevilla</h4>
+            <p class="date">2024</p>
+            <ul class="bullets">
+              <li>Diagnóstico, montaje y mantenimiento de equipos y periféricos.</li>
+              <li>Configuración y mantenimiento de servidores.</li>
+              <li>Mantenimiento, configuración y organización de la red y su cableado.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Profesor particular</h3>
+            <h4>Autónomo</h4>
+            <ul class="bullets">
+              <li>Nociones básicas sobre el funcionamiento y el uso de un equipo informático.</li>
+              <li>
+                Enseñanzas ofimáticas generales, de montaje, mantenimiento de
+                equipos, redes, seguridad, instalación y configuración de
+                servicios y sistemas en servidores.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Mantenimiento y reparación de equipos informáticos</h3>
+            <h4>Autónomo</h4>
+            <ul class="bullets">
+              <li>Mantenimiento y limpieza de equipos.</li>
+              <li>
+                Reparación de equipos, recuperación de datos, formateo e
+                instalación de sistemas operativos.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ EDUCACIÓN ============ -->
+      <section id="educacion" class="section reveal">
+        <h2>Educación</h2>
+
+        <ol class="timeline">
+          <li>
+            <h3>Técnico Superior de Desarrollo de Aplicaciones Web <span class="muted">(En proceso)</span></h3>
+            <h4>I.E.S Sotero Hernández</h4>
+            <p class="date">2024 - Presente</p>
+          </li>
+          <li>
+            <h3>Técnico de Sistemas Microinformáticos y Redes</h3>
+            <h4>I.E.S Sotero Hernández</h4>
+            <p class="date">2021 - 2024</p>
+          </li>
+          <li>
+            <h3>Educación Secundaria Obligatoria (E.S.O)</h3>
+            <h4>I.E.S Hipatia</h4>
+            <p class="date">2017 - 2021</p>
+          </li>
+        </ol>
+
+        <h2 class="sub">Destrezas</h2>
+        <ul class="tags tags-lg">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>MariaDB</li>
+          <li>PostgreSQL</li>
+          <li>Oracle Database XE</li>
+          <li>PL/SQL</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>IntelliJ</li>
+          <li>VSCode</li>
+          <li>Eclipse</li>
+          <li>NetBeans</li>
+          <li>Oracle SQL Developer</li>
+          <li>Office</li>
+        </ul>
+
+        <h2 class="sub">Idiomas</h2>
+        <ul class="tags tags-lg">
+          <li>Inglés · A2</li>
+          <li>Español · Nativo</li>
+        </ul>
+      </section>
+
+      <!-- ============ PROYECTOS ============ -->
+      <section id="proyectos" class="section reveal">
+        <h2>Proyectos</h2>
+
+        <!--
+          TODO: tu CV no incluye proyectos, así que estas tarjetas son de
+          ejemplo. Duplica o borra <article class="project"> según los que
+          tengas y cambia título, tecnologías, descripción, imagen y enlaces.
+        -->
+        <article class="project">
+          <!-- TODO: guarda una captura en img/proyecto-1.png -->
+          <div class="project-img">
+            <img
+              src="img/proyecto-1.png"
+              alt="Captura del proyecto 1"
+              loading="lazy"
+              onerror="this.remove()"
+            />
+            <span class="project-ph">Imagen del proyecto</span>
+          </div>
+          <h3>Ejercicios Nominas</h3>
+          <ul class="tags">
+            <li>Java</li>
+            <li>MariaDB</li>
+          </ul>
+          <p>
+            Proyectos de gestión de nóminas que permite el alta/baja de nuevos empleados, que permite modificar su sueldo base dependiendo del puesto que desempeñen, 
+            se puede hacer altas masivas de usuario a través de un documento de texto y también recoger los empleados actuales en un archivo de backup que también sirve para exportar.
+          </p>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/GOLDxurk/UD00.-Repaso-de-Java" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ SOBRE MÍ ============ -->
+      <section id="sobre-mi" class="section reveal">
+        <h2>Sobre mí</h2>
+        <div class="about">
+          <div class="about-text">
+            <p>
+              Me llamo Adrián y soy <strong>desarrollador web junior</strong>.
+              Me formé en Sistemas Microinformáticos y Redes y ahora estoy
+              terminando el ciclo superior de
+              <strong>Desarrollo de Aplicaciones Web</strong>, así que conozco
+              tanto la parte de sistemas como la de desarrollo.
+            </p>
+            <p>
+              Trabajo con <strong>HTML, CSS, JavaScript y Java</strong>, y con
+              bases de datos como MariaDB, PostgreSQL y Oracle. Mis prácticas
+              en <strong>NTT DATA</strong> me dieron mi primera experiencia en
+              un entorno real: desarrollo de aplicaciones, diseño de bases de
+              datos y testing.
+            </p>
+            <p>
+              Me mueven el interés por la programación, la capacidad de
+              aprender rápido y una actitud proactiva. Busco una oportunidad
+              donde aplicar lo que sé, mejorar mis habilidades técnicas y
+              aportar compromiso y responsabilidad al equipo.
+            </p>
+          </div>
+          <!-- TODO: opcional, otra foto tuya en img/sobre-mi.jpg -->
+          <img
+            class="about-img"
+            src="img/sobre-mi.jpg"
+            alt="Adrián Acevedo Reinoso"
+            loading="lazy"
+            onerror="this.remove()"
+          />
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section id="contacto" class="section contact reveal">
+        <h2>¿Hablamos?</h2>
+        <p class="lead">
+          Estoy buscando una oportunidad de prácticas. Escríbeme o descarga mi
+          currículum.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:adrianaceved@gmail.com">
+            adrianaceved@gmail.com
+          </a>
+          <!-- TODO: misma ruta que el botón del inicio -->
+          <a
+            class="btn"
+            href="cv/CV Europass Adrián Acevedo Reinoso.pdf"
+            download="CV Europass Adrián Acevedo Reinoso.pdf"
+          >
+            Descargar CV (PDF)
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year">2026</span> Adrián Acevedo Reinoso · Hecho con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
